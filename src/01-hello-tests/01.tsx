@@ -1,5 +1,9 @@
 export const sentence = 'Hello my friends!';
 
-function splitIntoWords (sentence: string) {
+export function sum(a: number, b: number) {
+    return a + b;
+}
+
+export function splitIntoWords (sentence: string) {
     return ["hello", "my", "friend"]
 }
