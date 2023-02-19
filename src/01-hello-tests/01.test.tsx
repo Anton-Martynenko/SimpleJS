@@ -40,5 +40,10 @@ test('splitting into words should be correct', () => {
     expect(result1[1]).toBe("my");
     expect(result1[2]).toBe("friend");
     expect(result2.length).toBe(5);
+    expect(result2[0]).toBe("js");
+    expect(result2[1]).toBe("the");
+    expect(result2[2]).toBe("best");
+    expect(result2[3]).toBe("programming");
+    expect(result2[4]).toBe("language");
 
 })

@@ -9,5 +9,11 @@ export function mult(a: number, b: number) {
 }
 
 export function splitIntoWords (sentence: string) {
-    return ["hello", "my", "friend"]
+    const words = sentence.toLowerCase().split(" ")
+
+    return words.filter(w => w !== "" && w !== "-")
+        .map(w => w
+            .replace("!", "")
+            .replace(".", "")
+            .replace(",", ""));
 }
