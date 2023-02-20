@@ -8,7 +8,7 @@ type StudentCityType = {
     countryTitle: string
 }
 
-type StudentAdressType = {
+type StudentAddressType = {
     streetTitle: string
     city: StudentCityType
 }
@@ -18,16 +18,16 @@ type StudentType = {
     name: string
     age: number
     isActive: boolean
-    adress: StudentAdressType
+    address: StudentAddressType
     technologies: Array<StudentTechnologiesType>
 }
 
-export const student = {
+export const student: StudentType = {
     id: 1,
     name: "Dimych",
     age: 32,
     isActive: false,
-    adress: {
+    address: {
         streetTitle: "Surganova 2",
         city: {
             title: "Minsk",
