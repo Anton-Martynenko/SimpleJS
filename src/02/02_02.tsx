@@ -1,8 +1,12 @@
 import {StudentCityType} from "./02";
 
+export type StreetType = {
+    title: string
+}
+
 export type AddressType = {
     number: number
-    street: StudentCityType
+    street: StreetType
 }
 
 export type HouseType = {

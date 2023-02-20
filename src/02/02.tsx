@@ -5,7 +5,7 @@ type StudentTechnologiesType = {
 
 export type StudentCityType = {
     title: string
-    countryTitle?: string
+    countryTitle: string
 }
 
 type StudentAddressType = {
