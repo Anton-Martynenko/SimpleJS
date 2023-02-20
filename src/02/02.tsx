@@ -3,9 +3,9 @@ type StudentTechnologiesType = {
     title: string
 }
 
-type StudentCityType = {
+export type StudentCityType = {
     title: string
-    countryTitle: string
+    countryTitle?: string
 }
 
 type StudentAddressType = {
