@@ -1,4 +1,5 @@
 import {StudentType} from "../02/02";
+import {addSkill} from "./03";
 
 let student: StudentType;
 beforeEach(() => {
@@ -33,4 +34,12 @@ beforeEach(() => {
             }
         ]
     }
+})
+
+test("new tech skill should be added to student", () => {
+    addSkill(student, "Redux");
+
+    expect(student.technologies.length).toBe(4);
+    expect(student.technologies[4].title).toBe("Redux");
+    expect(student.technologies[4].id).toBeDefined();
 })
