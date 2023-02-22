@@ -24,6 +24,10 @@ export function repairHouse(houseType: HouseType) {
   houseType.repaired = true;
 }
 
-export const toFireStaff = (buildings: GovernmentBuildingsType, number: number) => {
-  buildings.staffCount -= number;
+export const toFireStaff = (buildings: GovernmentBuildingsType, staffCountToFire: number) => {
+  buildings.staffCount -= staffCountToFire;
+}
+
+export const toHireStaff = (buildings: GovernmentBuildingsType, staffCountToHire: number) => {
+  buildings.staffCount += staffCountToHire;
 }
