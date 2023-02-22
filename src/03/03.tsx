@@ -31,3 +31,7 @@ export const toFireStaff = (buildings: GovernmentBuildingsType, staffCountToFire
 export const toHireStaff = (buildings: GovernmentBuildingsType, staffCountToHire: number) => {
   buildings.staffCount += staffCountToHire;
 }
+
+export function createMessage(city: CityType) {
+  return `Hello ${city.title} citizens. I want you be happy. All ${city.citizensNumber} men`
+}
