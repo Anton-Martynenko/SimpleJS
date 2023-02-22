@@ -1,5 +1,5 @@
 import {StudentType} from "../02/02";
-import {CityType, GovernmentBuildingsType} from "../02/02_02";
+import {CityType, GovernmentBuildingsType, HouseType} from "../02/02_02";
 
 
 export const addSkill = (st: StudentType, skill: string) => {
@@ -18,4 +18,8 @@ export function doesStudentLiveIn(s: StudentType, cityName: string) {
 
 export const addMoneyToBudget = (bilding: GovernmentBuildingsType, budget: number) => {
   bilding.budget += budget;
+}
+
+export function repairHouse(houseType: HouseType) {
+  houseType.repaired = true;
 }
