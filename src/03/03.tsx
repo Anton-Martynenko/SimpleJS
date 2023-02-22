@@ -8,5 +8,9 @@ export const addSkill = (st: StudentType, skill: string) => {
 }
 
 export function makeStudentActive(s: StudentType) {
-  s.isActive === true;
+  s.isActive = true;
+}
+
+export function doesStudentLiveIn(s: StudentType, cityName: string) {
+  return s.address.city.title == cityName;
 }
