@@ -17,11 +17,7 @@ test("should take courses chipper 160", () => {
         {title: "REACT", price: 150}
     ]
 
-    const chipPredicate = (course: CourseType) => {
-        return course.price < 160;
-    }
-
-    const chipCourses = courses.filter(chipPredicate);
+    const chipCourses = courses.filter(course => course.price < 160);
 
     expect(chipCourses.length).toBe(2);
     expect(chipCourses[0].title).toBe("CSS");
