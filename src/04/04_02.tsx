@@ -5,5 +5,5 @@ export const demolishHousesOnTheStreet = (city: CityType, street: string) => {
 }
 
 export const getBuildingsWithStaffCountGreaterThen = (buildings: Array<GovernmentBuildingsType>, number: number) => {
-  return buildings.filter(b => b.staffCount > 500);
+  return buildings.filter(b => b.staffCount > number);
 }
