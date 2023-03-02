@@ -38,3 +38,9 @@ const devs2 = [
 ]
 
 const devs3 = people.map(dimychTransformator);
+
+const devs4 = people.map( man => ({
+    stack: ["css, html", "js", "tdd", "react"],
+    firstName: man.name.split(" ")[0],
+    lastName: man.name.split(" ")[1]
+}))
