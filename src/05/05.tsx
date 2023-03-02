@@ -1,3 +1,5 @@
+import {GovernmentBuildingsType} from "../02/02_02";
+
 export type ManType = {
     name: string
     age: number
@@ -49,4 +51,8 @@ const messages = people.map( man => `Hello ${man.name.split(' ')[0]}. Welcome to
 
 export const createGreetingMessage = (people: Array<ManType>) => {
     return people.map( man => `Hello ${man.name.split(' ')[0]}. Welcome to IT-Incubator!`);
+}
+
+export const getStreetsTitlesOfGoverenmentsBuildings = (buildings: Array<GovernmentBuildingsType>) => {
+    return buildings.map( b => b.address.street.title)
 }
