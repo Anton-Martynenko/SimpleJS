@@ -1,4 +1,4 @@
-import {GovernmentBuildingsType} from "../02/02_02";
+import {GovernmentBuildingsType, HouseType} from "../02/02_02";
 
 export type ManType = {
     name: string
@@ -55,4 +55,8 @@ export const createGreetingMessage = (people: Array<ManType>) => {
 
 export const getStreetsTitlesOfGoverenmentsBuildings = (buildings: Array<GovernmentBuildingsType>) => {
     return buildings.map( b => b.address.street.title)
+}
+
+export const getStreetsTitlesOfHouses = (houses: Array<HouseType>) => {
+    return houses.map( h => h.address.street.title)
 }
