@@ -60,3 +60,7 @@ export const getStreetsTitlesOfGoverenmentsBuildings = (buildings: Array<Governm
 export const getStreetsTitlesOfHouses = (houses: Array<HouseType>) => {
     return houses.map( h => h.address.street.title)
 }
+
+export const createMessages = (houses: Array<HouseType>) => {
+    return houses.map( h => `Hello guys from ${h.address.street.title}`);
+}

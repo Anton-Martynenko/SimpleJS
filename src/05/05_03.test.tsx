@@ -1,5 +1,5 @@
 import {CityType} from "../02/02_02";
-import {getStreetsTitlesOfGoverenmentsBuildings, getStreetsTitlesOfHouses} from "./05";
+import {createMessages, getStreetsTitlesOfGoverenmentsBuildings, getStreetsTitlesOfHouses} from "./05";
 
 let city: CityType;
 
@@ -48,5 +48,15 @@ test("List of streets titles", () => {
     expect(streetsNames[0]).toBe("White street");
     expect(streetsNames[1]).toBe("Happy street");
     expect(streetsNames[2]).toBe("Happy street");
+
+})
+
+test("Create greeting messages for streets", () => {
+    let messages = createMessages(city.houses);
+
+    expect(messages.length).toBe(3);
+    expect(messages[0]).toBe("Hello guys from White street");
+    expect(messages[1]).toBe("Hello guys from Happy street");
+    expect(messages[2]).toBe("Hello guys from Happy street");
 
 })
