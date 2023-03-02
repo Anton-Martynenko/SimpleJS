@@ -44,3 +44,5 @@ const devs4 = people.map( man => ({
     firstName: man.name.split(" ")[0],
     lastName: man.name.split(" ")[1]
 }))
+
+const messages = people.map( man => `Hello ${man.name.split(' ')[0]}. Welcome to IT-Incubator!`);
