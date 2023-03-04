@@ -9,8 +9,11 @@ window.setTimeout(callback, 150)
 
 const User = () => {
 
+    const deleteUser = () => {
+        alert ("user have been deleted")
+    }
     return <div>Dimych
-        <button>delete</button>
+        <button onClick={deleteUser}>delete</button>
         <button>save</button>
     </div>
 }
