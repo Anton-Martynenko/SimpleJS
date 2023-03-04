@@ -17,7 +17,11 @@ const User = () => {
         alert ("user have been saved")
     }
 
-    return <div>Dimych
+    const onNameChanged = () => {
+
+    }
+
+    return <div><textarea>Dimych</textarea>
         <button onClick={deleteUser}>delete</button>
         <button onClick={saveUser}>save</button>
     </div>
