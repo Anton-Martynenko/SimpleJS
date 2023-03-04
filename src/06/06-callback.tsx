@@ -6,3 +6,11 @@ export const callback = (): number => {
 }
 
 window.setTimeout(callback, 150)
+
+const User = () => {
+
+    return <div>Dimych
+        <button>delete</button>
+        <button>save</button>
+    </div>
+}
