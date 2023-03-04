@@ -10,14 +10,18 @@ window.setTimeout(callback, 150)
 const User = () => {
 
     const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
-        alert("user have been deleted")
+        alert(event.currentTarget.name);
     }
 
-    const saveUser = () => {
+    const saveUser = (event: MouseEvent<HTMLButtonElement>) => {
         alert("user have been saved")
     }
 
     const onNameChanged = () => {
+        console.log("name changed");
+    }
+
+    const onAgeChanged = () => {
         console.log("name changed");
     }
 
@@ -26,9 +30,9 @@ const User = () => {
     }
 
     return <div><textarea onChange={onNameChanged} onBlur={focusLostHandler}>Dimych</textarea>
-        <input/>
-        <button name="delete" onClick={deleteUser}>delete</button>
-        <button name="save" onClick={saveUser}>save</button>
+        <input onChange={onAgeChanged}/>
+        <button name="delete" onClick={deleteUser}>x</button>
+        <button name="save" onClick={deleteUser}>x</button>
     </div>
 }
 
