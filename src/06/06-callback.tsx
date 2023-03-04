@@ -18,11 +18,14 @@ const User = () => {
     }
 
     const onNameChanged = () => {
-
+        console.log("name changed");
     }
 
-    return <div><textarea>Dimych</textarea>
+    return <div><textarea onChange={onNameChanged}>Dimych</textarea>
+        <input/>
         <button onClick={deleteUser}>delete</button>
         <button onClick={saveUser}>save</button>
     </div>
 }
+
+export default User;
