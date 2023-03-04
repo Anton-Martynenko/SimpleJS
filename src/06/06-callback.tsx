@@ -10,18 +10,25 @@ window.setTimeout(callback, 150)
 const User = () => {
 
     const deleteUser = () => {
-        alert ("user have been deleted")
+        alert("user have been deleted")
     }
 
     const saveUser = () => {
-        alert ("user have been saved")
+        alert("user have been saved")
     }
 
     const onNameChanged = () => {
         console.log("name changed");
     }
 
-    return <div><textarea onChange={onNameChanged}>Dimych</textarea>
+    const focusLostHandler = () => {
+        console.log("focus lost");
+    }
+
+    return <div><textarea
+        onChange={onNameChanged}
+        onBlur={focusLostHandler}
+    >Dimych</textarea>
         <input/>
         <button onClick={deleteUser}>delete</button>
         <button onClick={saveUser}>save</button>
