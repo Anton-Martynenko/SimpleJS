@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MouseEvent} from 'react'
 
 export const callback = (): number => {
     alert('Я ТЕБЯ ЛЮБЛЮ!!!')
@@ -9,7 +9,7 @@ window.setTimeout(callback, 150)
 
 const User = () => {
 
-    const deleteUser = () => {
+    const deleteUser = (event: MouseEvent<HTMLButtonElement>) => {
         alert("user have been deleted")
     }
 
@@ -25,13 +25,10 @@ const User = () => {
         console.log("focus lost");
     }
 
-    return <div><textarea
-        onChange={onNameChanged}
-        onBlur={focusLostHandler}
-    >Dimych</textarea>
+    return <div><textarea onChange={onNameChanged} onBlur={focusLostHandler}>Dimych</textarea>
         <input/>
-        <button onClick={deleteUser}>delete</button>
-        <button onClick={saveUser}>save</button>
+        <button name="delete" onClick={deleteUser}>delete</button>
+        <button name="save" onClick={saveUser}>save</button>
     </div>
 }
 
