@@ -1,5 +1,33 @@
 import {CityType} from "../02/02_02";
 
+type LessonType = {
+    title: string
+}
+
+type ManType = {
+    name: string
+    age: number
+    lessons: Array<LessonType>
+    address: {
+        street: {
+            title: string
+        }
+    }
+}
+let props: ManType;
+
+beforeEach(() => {
+    props = {
+        name: "Dimych",
+        age: 32,
+        lessons: [{title: "1"}, {title: "2"}],
+        address: {
+            street: {
+                title: "Nezavisimosti street"
+            }
+        }
+    }
+})
 test("", () => {
     let props = {
         name: "Dimych",
