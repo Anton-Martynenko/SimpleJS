@@ -21,6 +21,7 @@ type PropsType = {
 export const ManComponent: React.FC<PropsType> = ({title, man, ... props}) => {
     //const {title, man: {name}} = props;
     //const {name} = props.man;
+    //const {title, man, ...restProps} = props;
     return <div>
         <h1>{title}</h1>
         <hr/>
