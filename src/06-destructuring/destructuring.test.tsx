@@ -60,5 +60,8 @@ test("", () => {
 test('', () => {
     const l1 = props.lessons[0];
     const l2 = props.lessons[1];
+
+    expect(l1.title).toBe('1');
+    expect(l2.title).toBe('2');
 })
 
