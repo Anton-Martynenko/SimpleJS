@@ -1,4 +1,11 @@
-export const usersArray = ["Dimych", "Natasha", "Valera", "Katya"]
+export const usersArray = [
+    {id: 101, name: 'Dimych'},
+    {id: 3232312, name: 'Natasha'},
+    {id: 1212, name: 'Valera'},
+    {id: 1, name: 'Katya'}
+]
+
+//usersArray.find(u => u.id === 1);
 
 export const usersObj = {
     '0': 'Dimych',
@@ -8,8 +15,9 @@ export const usersObj = {
 }
 
 export const users = {
-    '0': {id: 101, name: 'Dimych'},
-    '1': {id: 1212, name: 'Natasha'},
-    '2': {id: 3232312, name: 'Valera'},
-    '3': {id: 1, name: 'Katya'}
+    '101': {id: 101, name: 'Dimych'},
+    '3232312': {id: 3232312, name: 'Natasha'},
+    '1212': {id: 1212, name: 'Valera'},
+    '1': {id: 1, name: 'Katya'}
 }
+
