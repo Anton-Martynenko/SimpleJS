@@ -72,6 +72,30 @@ test("reference test", () => {
 
 })
 
+test("reference test2", () => {
+    const address = {
+        title: "Minsk"
+    }
+
+    let user: UserType = {
+        name: 'Dimych',
+        age: 32,
+        address: address
+    }
+
+    let user2: UserType = {
+        name: 'Katya',
+        age: 26,
+        address: address
+    }
+
+    address.title = "Minsk City";
+
+    expect(user.address.title).toBe("Minsk City");
+    expect(user.address.title).toBe(user2.address.title);
+
+})
+
 
 
 
