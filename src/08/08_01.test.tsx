@@ -18,11 +18,16 @@ beforeEach(() => {
     }
 })
 test("should update corresponding user", () => {
-    expect(usersObj[0]).toBe('Dimych');
-    expect(usersObj[1]).toBe('Natasha');
-    expect(usersObj[2]).toBe('Valera');
-    expect(usersObj[3]).toBe('Katya');
+    users['1'].name = 'Ekaterina';
+    expect(users['1'].name).toBe('Ekaterina');
+    expect(users['1212']).toStrictEqual({id: 1212, name: 'Valera'});
+
 })
 
+test("should delete corresponding user", () => {
+    delete users['1'];
+    expect(users['1']).toBeUndefined();
+
+})
 
 
