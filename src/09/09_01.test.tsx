@@ -7,13 +7,17 @@ function increaseAge(u: UserType) {
 export type UserType = {
     name: string
     age: number
+    address: { title: string }
 }
 
 
 test("big test", () => {
     let user: UserType = {
         name: 'Dimych',
-        age: 32
+        age: 32,
+        address: {
+            title: "Minsk"
+        }
     }
 
     increaseAge(user);
@@ -26,18 +30,45 @@ test("big test", () => {
 test("array test", () => {
     let users = [
         {
-        name: 'Dimych',
-        age: 32
-    },
+            name: 'Dimych',
+            age: 32,
+            address: {
+                title: "Minsk"
+            }
+        },
         {
             name: 'Katya',
-            age: 26
+            age: 26,
+            address: {
+                title: "Minsk"
+            }
         }
     ]
 
     let admins = users;
-    admins.push({name: 'Bandit', age: 10})
-    expect(users[2]).toEqual({name: 'Bandit', age: 10});
+    admins.push({name: 'Bandit', age: 10, address: {title: "Minsk"}})
+    expect(users[2]).toEqual({name: 'Bandit', age: 10, address: {title: "Minsk"}});
+
+})
+
+test("reference test", () => {
+    let user: UserType = {
+        name: 'Dimych',
+        age: 32,
+        address: {
+            title: "Minsk"
+        }
+    }
+
+    let user2: UserType = {
+        name: 'Katya',
+        age: 26,
+        address: user.address
+    }
+
+    user2.address.title = "Kuba";
+
+    expect(user.address.title).toBe("Kuba");
 
 })
 
