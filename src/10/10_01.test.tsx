@@ -1,7 +1,11 @@
 import {UserType} from "./10_01";
 
 function hairdresser(u: UserType, power: number) {
-    u.hair = u.hair / 2
+    const copy = {
+        ...u
+    }
+    copy.hair = u.hair / power
+    return copy;
 }
 
 test('reference type test', () => {
@@ -13,7 +17,8 @@ test('reference type test', () => {
         }
     }
 
-    hairdresser(user, 2);
+    const awesomeUser = hairdresser(user, 2);
 
-    expect(user.hair).toBe(16)
+    expect(user.hair).toBe(32)
+    expect(awesomeUser.hair).toBe(16)
 })
