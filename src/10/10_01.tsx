@@ -56,10 +56,9 @@ export function addNewBooksToUser(u: UserWithLaptopType & UserWithBooksType, boo
     }
 }
 
-export function updateBookToUser(u: UserWithLaptopType & UserWithBooksType, newBook: string) {
+export function removeBook(u: UserWithLaptopType & UserWithBooksType, oldBook: string) {
     return {
-
-        ...u, books: [...u.books.map(e => e == 'js' ? 'ts' : e)]
+        ...u, books: [...u.books.filter(e => e !== oldBook)]
     }
 }
 

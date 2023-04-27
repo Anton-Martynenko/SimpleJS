@@ -2,7 +2,7 @@ import {
     addNewBooksToUser,
     makeHairstyle,
     moveUser,
-    moveUserToOtherHouse, updateBookToUser,
+    moveUserToOtherHouse, removeBook, updateBookToUser,
     upgradeUserLaptop,
     UserType,
     UserWithBooksType,
@@ -129,7 +129,7 @@ test('update js to ts', () => {
         books: ['css', 'html', 'js', 'react']
     }
 
-    const userCopy = updateBookToUser(user, 'ts');
+    const userCopy = updateBookToUser(user, 'js','ts');
 
     expect(user).not.toBe(userCopy);
     expect(user.address).toBe(userCopy.address);
@@ -137,4 +137,28 @@ test('update js to ts', () => {
     expect(userCopy.books).toStrictEqual(['css', 'html', 'ts', 'react']);
     expect(user.books).not.toBe(userCopy.books);
     expect(userCopy.books[2]).toBe('ts');
+})
+
+test('remove js book', () => {
+    let user: UserWithLaptopType & UserWithBooksType= {
+        name: 'Dimych',
+        hair: 32,
+        address: {
+            city: 'Minsk',
+            house: 12
+        },
+        laptop: {
+            title: 'Asus'
+        },
+        books: ['css', 'html', 'js', 'react']
+    }
+
+    const userCopy = removeBook(user, 'js');
+
+    expect(user).not.toBe(userCopy);
+    expect(user.address).toBe(userCopy.address);
+    expect(user.laptop).toBe(userCopy.laptop);
+    expect(userCopy.books).toStrictEqual(['css', 'html', 'react']);
+    expect(user.books).not.toBe(userCopy.books);
+    expect(userCopy.books[2]).toBe('react');
 })
