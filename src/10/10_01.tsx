@@ -49,4 +49,12 @@ export function moveUserToOtherHouse(u: UserWithLaptopType & UserWithBooksType, 
     }
 }
 
+export function addNewBooksToUser(u: UserWithLaptopType & UserWithBooksType, books: Array<string>) {
+    return {
+        ...u, books: [...u.books.concat(books)]
+        //...u, books: [...u.books, ...books]
+    }
+}
+
+
 
