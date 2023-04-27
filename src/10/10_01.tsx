@@ -22,15 +22,15 @@ export function makeHairstyle(u: UserType, power: number) {
 }
 
 export function moveUser(u: UserWithLaptopType, city: string) {
-    const copy = {
-        ...u
+    return {
+        ...u, address: {...u.address, city: city}
     }
 
-    copy.address ={
-        ...copy.address, city: city
-    }
-
-    return copy;
+    // copy.address ={
+    //     ...copy.address, city: city
+    // }
+    //
+    // return copy;
 }
 
 
