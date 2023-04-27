@@ -1,10 +1,11 @@
 import {UserType} from "./10_01";
 
-function hairdresser(u: UserType, power: number) {
+function makeHairstyle(u: UserType, power: number) {
     const copy = {
-        ...u
+        ...u,
+        hair: u.hair / power
     }
-    copy.hair = u.hair / power
+    //copy.hair = u.hair / power
     return copy;
 }
 
@@ -17,7 +18,7 @@ test('reference type test', () => {
         }
     }
 
-    const awesomeUser = hairdresser(user, 2);
+    const awesomeUser = makeHairstyle(user, 2);
 
     expect(user.hair).toBe(32)
     expect(awesomeUser.hair).toBe(16)
