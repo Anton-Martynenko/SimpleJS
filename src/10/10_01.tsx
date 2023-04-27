@@ -51,8 +51,15 @@ export function moveUserToOtherHouse(u: UserWithLaptopType & UserWithBooksType, 
 
 export function addNewBooksToUser(u: UserWithLaptopType & UserWithBooksType, books: Array<string>) {
     return {
-        ...u, books: [...u.books.concat(books)]
-        //...u, books: [...u.books, ...books]
+        //...u, books: [...u.books.concat(books)]
+        ...u, books: [...u.books, ...books]
+    }
+}
+
+export function updateBookToUser(u: UserWithLaptopType & UserWithBooksType, newBook: string) {
+    return {
+
+        ...u, books: [...u.books.map(e => e == 'js' ? 'ts' : e)]
     }
 }
 
