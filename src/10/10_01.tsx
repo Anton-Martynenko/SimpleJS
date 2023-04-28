@@ -20,6 +20,10 @@ export type WithCompaniesType = {
     companies: Array<{id: number, title: string}>
 }
 
+export type CompanyType = {
+    id: number, title: string
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -80,6 +84,15 @@ export function updateCompanyTitle(u: UserWithLaptopType & WithCompaniesType, co
     return {
         ...u, companies: u.companies.map(e => e.id === companyId ? {...e, title: newTitle} : e)
     }
+}
+
+export function updateCompanyTitle2(companies: {[key: string]: Array<CompanyType> },
+                                    userName: string,
+                                    companyId: number,
+                                    newTitle: string) {
+    let companyCopy = {...companies}
+    companyCopy[userName] = companyCopy[userName].map(e => e.id === companyId ? {...e, title: newTitle} : e)
+    return companyCopy;
 }
 
 
