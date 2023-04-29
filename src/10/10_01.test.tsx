@@ -1,6 +1,6 @@
 import {
     addCompany,
-    addNewBooksToUser,
+    addNewBooksToUser, changedSkill,
     makeHairstyle,
     moveUser,
     moveUserToOtherHouse, removeBook, updateBookToUser, updateCompanyTitle, updateCompanyTitle2,
@@ -222,4 +222,18 @@ test('update company', () => {
     expect(companies['Dimych']).not.toBe(userCopy['Dimych']);
     expect(companies['Artem']).toBe(userCopy['Artem']);
     expect(userCopy['Dimych'][0].title).toBe('EPAM');
+})
+
+test('change skill', () => {
+    let student = {
+        'Dimych': [{id: 1, title: 'html', value: 100}, {id: 2, title: 'css', value: 100}],
+        'Valera': [{id: 1, title: 'html', value: 85}, {id: 2, title: 'css', value: 75}]
+    }
+
+    const userCopy = changedSkill(student, 'Valera', 75, 90);
+
+    expect(student["Valera"]).not.toBe(userCopy['Valera']);
+    expect(student['Dimych']).toBe(userCopy['Dimych']);
+    expect(userCopy['Valera'][1].value).toBe(90);
+    expect(student['Valera'][1].value).toBe(75);
 })

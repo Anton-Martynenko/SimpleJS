@@ -24,6 +24,10 @@ export type CompanyType = {
     id: number, title: string
 }
 
+export type SkillType = {
+    id: number, title: string, value: number
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -93,6 +97,15 @@ export function updateCompanyTitle2(companies: {[key: string]: Array<CompanyType
     let companyCopy = {...companies}
     companyCopy[userName] = companyCopy[userName].map(e => e.id === companyId ? {...e, title: newTitle} : e)
     return companyCopy;
+}
+
+export function changedSkill(student: {[key: string]: Array<SkillType>},
+                             userName: string,
+                             oldValue: number,
+                             newValue: number) {
+    let studentCopy = {...student}
+    studentCopy[userName] = studentCopy[userName].map(e => e.value === oldValue ? {...e, value: newValue} : e)
+    return studentCopy;
 }
 
 
