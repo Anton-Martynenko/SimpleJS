@@ -108,5 +108,11 @@ export function changedSkill(student: {[key: string]: Array<SkillType>},
     return studentCopy;
 }
 
+export function changeManAge(man: {name: string, age: number}, newAge: number) {
+    let manCopy = {...man}
+    manCopy.age = newAge;
+    return manCopy;
+}
+
 
 
