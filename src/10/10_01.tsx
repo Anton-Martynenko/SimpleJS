@@ -28,6 +28,14 @@ export type SkillType = {
     id: number, title: string, value: number
 }
 
+export type Man1MothersType = {
+    name: string, age: number
+}
+
+export type Man1Type = {
+    name: string, age: number, mother: Man1MothersType
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -118,6 +126,13 @@ export function changeNumber(numbers: Array<number>, newNumber: number) {
     // let numbersCopy = [...numbers, newNumber];
     // return numbersCopy;
     return [...numbers, newNumber];
+}
+
+export function changeMothersAge(man1: Man1Type, newAge: number) {
+    // let man1Copy = {...man1, mother: {...man1.mother}};
+    // man1Copy.mother.age = newAge;
+    // return man1Copy;
+    return {...man1, mother: {...man1.mother, age: newAge}};
 }
 
 
