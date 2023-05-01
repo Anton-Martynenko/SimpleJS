@@ -36,6 +36,10 @@ export type Man1Type = {
     name: string, age: number, mother: Man1MothersType
 }
 
+export type Man2Type = {
+    name: string, age: number, friends: Array<string>
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -133,6 +137,13 @@ export function changeMothersAge(man1: Man1Type, newAge: number) {
     // man1Copy.mother.age = newAge;
     // return man1Copy;
     return {...man1, mother: {...man1.mother, age: newAge}};
+}
+
+export function changeFriendName(man2: Man2Type, oldName: string, newName: string) {
+    // let man2Copy = {...man2, friends: {...man2.friends}};
+    // man2Copy.friends[2] = newName;
+    // return man2Copy;
+    return {...man2, friends: [...man2.friends.map(e => e === oldName ? newName : e)]};
 }
 
 
