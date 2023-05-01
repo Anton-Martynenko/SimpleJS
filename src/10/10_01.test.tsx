@@ -1,6 +1,6 @@
 import {
     addCompany,
-    addNewBooksToUser, changedSkill, changeManAge,
+    addNewBooksToUser, changedSkill, changeManAge, changeNumber,
     makeHairstyle,
     moveUser,
     moveUserToOtherHouse, removeBook, updateBookToUser, updateCompanyTitle, updateCompanyTitle2,
@@ -249,4 +249,14 @@ test('deep copy 1', () => {
     expect(man.age).not.toBe(manFullCopy.age);
     expect(manFullCopy.age).toBe(32);
     expect(man.age).toBe(28);
+})
+
+test('deep copy 2', () => {
+    let numbers = [1, 2, 3];
+
+    let numbersFullCopy = changeNumber(numbers, 4);
+
+    expect(numbersFullCopy[3]).toBe(4);
+    expect(numbers.length).toBe(3);
+    expect(numbersFullCopy.length).toBe(4);
 })

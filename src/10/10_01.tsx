@@ -114,5 +114,11 @@ export function changeManAge(man: {name: string, age: number}, newAge: number) {
     return manCopy;
 }
 
+export function changeNumber(numbers: Array<number>, newNumber: number) {
+    // let numbersCopy = [...numbers, newNumber];
+    // return numbersCopy;
+    return [...numbers, newNumber];
+}
+
 
 
