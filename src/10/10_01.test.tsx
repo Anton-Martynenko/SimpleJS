@@ -1,13 +1,25 @@
 import {
     addCompany,
-    addNewBooksToUser, changedSkill, changeFriendName, changeManAge, changeMothersAge, changeNumber, changePeopleAge,
+    addNewBooksToUser,
+    changedSkill,
+    changeFriendAge,
+    changeFriendName,
+    changeManAge,
+    changeMothersAge,
+    changeNumber,
+    changePeopleAge,
     makeHairstyle,
     moveUser,
-    moveUserToOtherHouse, removeBook, updateBookToUser, updateCompanyTitle, updateCompanyTitle2,
+    moveUserToOtherHouse,
+    removeBook,
+    updateBookToUser,
+    updateCompanyTitle,
+    updateCompanyTitle2,
     upgradeUserLaptop,
     UserType,
     UserWithBooksType,
-    UserWithLaptopType, WithCompaniesType
+    UserWithLaptopType,
+    WithCompaniesType
 } from "./10_01";
 
 test('reference type test', () => {
@@ -306,4 +318,22 @@ test('deep copy 5', () => {
     expect(people[1].age).toBe(32);
     expect(peopleFullCopy[1].age).toBe(33);
     expect(people[2].name).toBe(peopleFullCopy[2].name);
+})
+
+test('deep copy 6', () => {
+    let man3 = {
+        name: 'John',
+        age: 28,
+        friends: [
+            {name: "Peter", age: 30},
+            {name: "Steven", age: 32},
+            {name: "William", age: 28}
+        ]
+    };
+
+    let man3FullCopy = changeFriendAge(man3, "William", 29);
+
+    expect(man3.friends[2].age).toBe(28);
+    expect(man3FullCopy.friends[2].age).toBe(29);
+    expect(man3.friends[2].name).toBe(man3FullCopy.friends[2].name);
 })
