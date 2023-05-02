@@ -6,7 +6,7 @@ import {
     changeFriendName,
     changeManAge,
     changeMothersAge,
-    changeNumber,
+    changeNumber, changeParentAge,
     changePeopleAge,
     makeHairstyle,
     moveUser,
@@ -358,4 +358,30 @@ test('deep copy 7', () => {
     expect(man4FullCopy.mother.work.experience).not.toBe(man4.mother.work.experience);
     expect(man4.mother.work.experience).toBe(15);
     expect(man4.mother.work.position).toBe(man4FullCopy.mother.work.position);
+})
+
+test('deep copy 8', () => {
+    let man5 = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            },
+            parents: [
+                {name: "Kevin", age: 80},
+                {name: "Jennifer", age: 78},
+            ]
+        }
+    };
+
+    let man5FullCopy = changeParentAge(man5, "Jennifer", 79);
+
+    expect(man5FullCopy.mother.parents[1].age).toBe(79);
+    expect(man5.mother.parents[1].age).toBe(78);
+    expect(man5.mother.work.position).toBe(man5FullCopy.mother.work.position);
+    expect(man5.name).toBe(man5FullCopy.name);
 })

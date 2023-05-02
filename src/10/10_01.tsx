@@ -60,6 +60,18 @@ export type Man4Type = {
     name: string, age: number, mother: MotherType
 }
 
+export type ParentsType = {
+    name: string, age: number
+}
+
+export type Man5MotherType = {
+    name: string, age: number, work: WorkType,parents: Array<ParentsType>
+}
+
+export type Man5Type = {
+    name: string, age: number, mother: Man5MotherType
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -176,6 +188,10 @@ export function changeFriendAge(man3: Man3Type, friendName: string, newAge: numb
 
 export function changeExperience(man4: Man4Type, newExperience: number) {
     return {...man4, mother: {...man4.mother, work: { ...man4.mother.work, experience: newExperience}}}
+}
+
+export function changeParentAge(man5: Man5Type, parentName: string, newAge: number) {
+    return {...man5, mother: {...man5.mother, parents: [...man5.mother.parents.map(e => e.name === "Jennifer" ? {...e, age: newAge} : e)]}}
 }
 
 
