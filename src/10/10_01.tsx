@@ -65,11 +65,27 @@ export type ParentsType = {
 }
 
 export type Man5MotherType = {
-    name: string, age: number, work: WorkType,parents: Array<ParentsType>
+    name: string, age: number, work: WorkType, parents: Array<ParentsType>
 }
 
 export type Man5Type = {
     name: string, age: number, mother: Man5MotherType
+}
+
+export type WithDishType = {
+    title: string
+}
+
+export type ParentsWithDishType = {
+    name: string, age: number, favoriteDish: WithDishType
+}
+
+export type Man6MotherType = {
+    name: string, age: number, work: WorkType, parents: Array<ParentsWithDishType>
+}
+
+export type Man6Type = {
+    name: string, age: number, mother: Man6MotherType
 }
 
 export function makeHairstyle(u: UserType, power: number) {
@@ -192,6 +208,10 @@ export function changeExperience(man4: Man4Type, newExperience: number) {
 
 export function changeParentAge(man5: Man5Type, parentName: string, newAge: number) {
     return {...man5, mother: {...man5.mother, parents: [...man5.mother.parents.map(e => e.name === "Jennifer" ? {...e, age: newAge} : e)]}}
+}
+
+export function changeParentDishTitle(man6: Man6Type, parentName: string, newDish: string) {
+    return {...man6, mother: {...man6.mother, parents: [...man6.mother.parents.map(e => e.name === "Jennifer" ? {...e, favoriteDish: {...e.favoriteDish, title: newDish}} : e)]}}
 }
 
 
