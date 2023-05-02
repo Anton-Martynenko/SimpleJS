@@ -1,7 +1,7 @@
 import {
     addCompany,
     addNewBooksToUser,
-    changedSkill,
+    changedSkill, changeExperience,
     changeFriendAge,
     changeFriendName,
     changeManAge,
@@ -336,4 +336,26 @@ test('deep copy 6', () => {
     expect(man3.friends[2].age).toBe(28);
     expect(man3FullCopy.friends[2].age).toBe(29);
     expect(man3.friends[2].name).toBe(man3FullCopy.friends[2].name);
+})
+
+test('deep copy 7', () => {
+    let man4 = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            }
+        }
+    };
+
+    let man4FullCopy = changeExperience(man4, 17);
+
+    expect(man4FullCopy.mother.work.experience).toBe(17);
+    expect(man4FullCopy.mother.work.experience).not.toBe(man4.mother.work.experience);
+    expect(man4.mother.work.experience).toBe(15);
+    expect(man4.mother.work.position).toBe(man4FullCopy.mother.work.position);
 })
