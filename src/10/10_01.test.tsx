@@ -1,6 +1,6 @@
 import {
     addCompany,
-    addNewBooksToUser,
+    addNewBooksToUser, changeAmount,
     changedSkill, changeExperience,
     changeFriendAge,
     changeFriendName,
@@ -422,4 +422,51 @@ test('deep copy 9', () => {
     expect(man6.mother.parents[1].favoriteDish.title).toBe("sushi");
     expect(man6.mother.work.position).toBe(man6FullCopy.mother.work.position);
     expect(man6.mother.parents[1].name).toBe(man6FullCopy.mother.parents[1].name);
+})
+
+test('deep copy 10', () => {
+    let man7 = {
+        name: 'John',
+        age: 28,
+        mother: {
+            name: "Kate",
+            age: 50,
+            work: {
+                position: "doctor",
+                experience: 15
+            },
+            parents: [
+                {
+                    name: "Kevin",
+                    age: 80,
+                    favoriteDish: {
+                        title: "borscht",
+                        ingredients: [
+                            {title: "beet", amount: 3},
+                            {title: "potatoes", amount: 5},
+                            {title: "carrot", amount: 1},
+                        ]
+                    }
+                },
+                {
+                    name: "Jennifer",
+                    age: 78,
+                    favoriteDish: {
+                        title: "sushi",
+                        ingredients: [
+                            {title: "fish", amount: 1},
+                            {title: "rise", amount: 0.5}
+                        ]
+                    }
+                },
+            ]
+        }
+    };
+
+    let man7FullCopy = changeAmount(man7, "rise", 2);
+
+    expect(man7FullCopy.mother.parents[1].favoriteDish.ingredients[1].amount).toBe(2);
+    expect(man7.mother.parents[1].favoriteDish.ingredients[1].amount).toBe(0.5);
+    expect(man7).not.toBe(man7FullCopy);
+    expect(man7FullCopy.mother.work.experience).toBe(15);
 })

@@ -88,6 +88,26 @@ export type Man6Type = {
     name: string, age: number, mother: Man6MotherType
 }
 
+export type IngredientsType = {
+    title: string, amount: number
+}
+
+export type FavoriteDishType = {
+    title: string, ingredients: Array<IngredientsType>
+}
+
+export type ParentsWithIngredientsType = {
+    name: string, age: number, favoriteDish: FavoriteDishType
+}
+
+export type Man7MotherType = {
+    name: string, age: number, work: WorkType, parents: Array<ParentsWithIngredientsType>
+}
+
+export type Man7Type = {
+    name: string, age: number, mother: Man7MotherType
+}
+
 export function makeHairstyle(u: UserType, power: number) {
     const copy = {
         ...u,
@@ -212,6 +232,10 @@ export function changeParentAge(man5: Man5Type, parentName: string, newAge: numb
 
 export function changeParentDishTitle(man6: Man6Type, parentName: string, newDish: string) {
     return {...man6, mother: {...man6.mother, parents: [...man6.mother.parents.map(e => e.name === "Jennifer" ? {...e, favoriteDish: {...e.favoriteDish, title: newDish}} : e)]}}
+}
+
+export function changeAmount(man7: Man7Type, title: string, newAmount: number) {
+    return {...man7, mother: {...man7.mother, parents: [...man7.mother.parents.map(e => e ? {...e,favoriteDish: {...e.favoriteDish, ingredients: [...e.favoriteDish.ingredients.map(t => t.title === "rise" ? {...t, amount: newAmount} : t)]}} : e)  ]}}
 }
 
 
