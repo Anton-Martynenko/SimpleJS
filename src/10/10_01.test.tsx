@@ -1,6 +1,6 @@
 import {
     addCompany,
-    addNewBooksToUser, changedSkill, changeFriendName, changeManAge, changeMothersAge, changeNumber,
+    addNewBooksToUser, changedSkill, changeFriendName, changeManAge, changeMothersAge, changeNumber, changePeopleAge,
     makeHairstyle,
     moveUser,
     moveUserToOtherHouse, removeBook, updateBookToUser, updateCompanyTitle, updateCompanyTitle2,
@@ -291,4 +291,19 @@ test('deep copy 4', () => {
     expect(man2.friends[2]).toBe("William");
     expect(man2.name).toBe(man2FullCopy.name);
     expect(man2.friends).not.toBe(man2FullCopy.friends);
+})
+
+test('deep copy 5', () => {
+    let people = [
+        {name: "Peter", age: 30},
+        {name: "Steven", age: 32},
+        {name: "William", age: 28}
+    ];
+
+
+    let peopleFullCopy = changePeopleAge(people, 32, 33);
+
+    expect(people[1].age).toBe(32);
+    expect(peopleFullCopy[1].age).toBe(33);
+    expect(people[2].name).toBe(peopleFullCopy[2].name);
 })
