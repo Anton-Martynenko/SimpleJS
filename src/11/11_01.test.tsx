@@ -1,4 +1,4 @@
-import {repeatWord, startsWithSubstring} from "./11_01";
+import {repeatWord, slicedString, startsWithSubstring} from "./11_01";
 
 
 // beforeEach(() => {
@@ -14,6 +14,13 @@ test('test 11-2', () => {
     expect(startsWithSubstring('Castle', 'ca')).toBe(true);
     expect(startsWithSubstring('Computer', 'Coml')).toBe(false);
     expect(startsWithSubstring('react-js', 'Re')).toBe(true);
+})
+
+test('test 11-3', () => {
+    expect(slicedString('Yohgshhh', 2)).toBe('Yo...');
+    expect(slicedString('Brakfast', 4)).toBe('Brak...');
+    expect(slicedString('button', 2)).toBe('bu...');
+    expect(slicedString('Happy', 5)).toBe('Happy...');
 })
 
 
