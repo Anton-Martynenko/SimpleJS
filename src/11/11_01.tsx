@@ -7,7 +7,11 @@ export const repeatWord = (str: string, count: number, separetor: string) => {
 }
 
 export const startsWithSubstring = (str: string, substr: string) => {
-    return str.startsWith(substr);
+    return str.toLowerCase().startsWith(substr.toLowerCase());
+}
+
+export const slicedString = (str: string, count: number) => {
+    return str.slice(0, count).padEnd(count + 3, '.');
 }
 
 // console.log(repeatWord('yo', 3, '-'));
