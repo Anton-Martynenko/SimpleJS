@@ -1,10 +1,13 @@
 export const repeatWord = (str: string, count: number, separetor: string) => {
     const firstStep = str.repeat(count);
     const secondStep = firstStep.match(new RegExp(`${str}`, 'g'));
-    const thirdStep = secondStep !== null ? secondStep.join(separetor) : [];
+    const thirdStep = secondStep ? secondStep.join(separetor) : [];
+
     return thirdStep;
+}
 
-
+export const startsWithSubstring = (str: string, substr: string) => {
+    return str.startsWith(substr);
 }
 
 // console.log(repeatWord('yo', 3, '-'));
