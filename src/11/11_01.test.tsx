@@ -1,4 +1,4 @@
-import {getMinLength, repeatWord, slicedString, startsWithSubstring, upperedString} from "./11_01";
+import {getMinLength, includesString, repeatWord, slicedString, startsWithSubstring, upperedString} from "./11_01";
 
 
 // beforeEach(() => {
@@ -34,6 +34,15 @@ test('test 11-5', () => {
     expect(upperedString('dog cat Mouse fish!')).toBe('Dog Cat Mouse Fish!');
     expect(upperedString('yo yo! Yo yo')).toBe('Yo Yo! Yo Yo');
     expect(upperedString('happy new year!')).toBe('Happy New Year!');
+})
+
+test('test 11-6', () => {
+    expect(includesString('Incubator', 'irrn')).toBe(true);
+    expect(includesString('Incubator', ' ')).toBe(false);
+    expect(includesString('library', 'yyyyl')).toBe(true);
+    expect(includesString('library', 'yo')).toBe(false);
+    expect(includesString('Unstoppable', 'table')).toBe(true);
+    expect(includesString('Unstoppable', 'unSTOP')).toBe(true);
 })
 
 
