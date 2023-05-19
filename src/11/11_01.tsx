@@ -33,6 +33,13 @@ export const upperedString = (str: string) => {
         .join(' ');
 }
 
+export const includesString = (str: string, substr: string) => {
+    return substr
+        .toLowerCase()
+        .split('')
+        .every(e => str.toLowerCase().split('').includes(e));
+}
+
 // console.log(repeatWord('yo', 3, '-'));
 
 //1. Реализуйте функцию, которая принимает параметром подсторку, число повторов и разделитель, а возвращает сторку, состоящую из указанного количества повторов подстроки с использованием разделителя.
