@@ -1,4 +1,4 @@
-import {getMinLength, repeatWord, slicedString, startsWithSubstring} from "./11_01";
+import {getMinLength, repeatWord, slicedString, startsWithSubstring, upperedString} from "./11_01";
 
 
 // beforeEach(() => {
@@ -28,6 +28,12 @@ test('test 11-4', () => {
     expect(getMinLength('This dog loves cat')).toBe('dog');
     expect(getMinLength('')).toBe(null);
     expect(getMinLength('Man cat dog')).toBe('Man');
+})
+
+test('test 11-5', () => {
+    expect(upperedString('dog cat Mouse fish!')).toBe('Dog Cat Mouse Fish!');
+    expect(upperedString('yo yo! Yo yo')).toBe('Yo Yo! Yo Yo');
+    expect(upperedString('happy new year!')).toBe('Happy New Year!');
 })
 
 
