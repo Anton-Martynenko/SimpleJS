@@ -11,7 +11,17 @@ export const startsWithSubstring = (str: string, substr: string) => {
 }
 
 export const slicedString = (str: string, count: number) => {
-    return str.slice(0, count).padEnd(count + 3, '.');
+    return str.slice(0, count).padEnd(count + 3, '.'); //Если count > str.length, то точек будет больше
+}
+
+export const getMinLength = (str: string) => { //сли слова одинаковой длины, возвращает первое
+    if (str.length > 0) {
+        let splitedString = str.split(' ');
+
+        return splitedString.reduce((a, b) => b.length < a.length ? b : a, splitedString[0]);
+    } else {
+        return null;
+    }
 }
 
 // console.log(repeatWord('yo', 3, '-'));
