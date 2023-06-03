@@ -17,17 +17,25 @@ export function sum(...nums: Array<number>): number {
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует.
 
-export function getTriangleType(a: number,b: number,c: number): string {
+export function getTriangleType(a: number, b: number, c: number): string {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return ""
+    if (a + b < c || a + c < b || b + c < a) {
+        return "00"
+    } else if (a === b && a === c) {
+        return "10"
+    } else if (a === b || a === c || b === c) {
+        return "01"
+    } else {
+        return "11"
+    }
 }
 
 
 // 3. Функция getSum принимает параметром целое число и возвращает
 // сумму цифр этого числа
 
-export function getSum(number: number): number{
+export function getSum(number: number): number {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
     return 123
