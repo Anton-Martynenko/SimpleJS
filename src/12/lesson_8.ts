@@ -38,7 +38,7 @@ export function getTriangleType(a: number, b: number, c: number): string {
 export function getSum(number: number): number {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 123
+    return number.toString().split('').map(Number).reduce((acc, el) => acc + el);
 }
 
 
