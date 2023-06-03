@@ -92,7 +92,7 @@ export function getSquarePositiveIntegers(array: Array<number>): Array<number> {
 export function sumFirstNumbers(N: number): number {
     //...здесь пишем код.
     // В return стоит "заглушка", чтоб typescript не ругался
-    return 0
+    return (N * (N + 1)) / 2;
 }
 
 // ...и "лапку" вверх!!!!
