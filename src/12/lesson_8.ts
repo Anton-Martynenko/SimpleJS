@@ -49,8 +49,30 @@ export function getSum(number: number): number {
 
 export const isEvenIndexSumGreater = (arr: Array<number>): boolean => {
     //...здесь пишем код.
+    // let evenSum = 0;
+    // let oddSum = 0;
+    // arr.forEach( (i, e) => {
+    //     if (i % 2 === 0) {
+    //         evenSum = evenSum + e;
+    //     }
+    // })
+    // arr.forEach( (i, e) => {
+    //     if (i % 2 !== 0) {
+    //         oddSum = oddSum + e;
+    //     }
+    // })
+    //
+
+    // for(let i = 0; i < arr.length; i=i+2) {
+    //     evenSum = evenSum + arr[i];
+    // }
+    // for(let i = 0; i < arr.length; i=i++) {
+    //     oddSum = oddSum + arr[i];
+    // }
     // В return стоит "заглушка", чтоб typescript не ругался
-    return true
+    // return evenSum < oddSum;
+    return arr.filter((el, index) => index % 2 === 0 ? el : 0)
+        > arr.filter((el, index) => index % 2 !== 0 ? el : 0)
 }
 
 // 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив. 

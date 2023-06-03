@@ -20,6 +20,7 @@ test("get Sum ", ()=> {
     expect(getSum(0)).toBe(0)
     expect(getSum(1234)).toBe(10)
     expect(getSum(9999)).toBe(36)
+    expect(getSum(27)).toBe(9)
 })
 test("is Even Sum Greater", ()=> {
     expect(isEvenIndexSumGreater([1, 100, 2, 200])).toBe(false)
